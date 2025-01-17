@@ -11,3 +11,6 @@ code from Kaylee Watson <br />
 usage: python plot_pod5.py [pod5_file] [read_ID] <br />
 
 [Batch renaming of directories](https://github.com/Franck-Dumetz/miscellaneous/blob/main/batch_Dir_rename.sh) <br />
+
+[Hisat --new-summary summary table](https://github.com/Franck-Dumetz/miscellaneous/blob/main/Hisat--new-summary_sum.py) <br />
+This script creates a table from multiple --new-summary files output by hisat2 <br />
