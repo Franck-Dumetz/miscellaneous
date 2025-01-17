@@ -14,3 +14,6 @@ usage: python plot_pod5.py [pod5_file] [read_ID] <br />
 
 [Hisat --new-summary summary table](https://github.com/Franck-Dumetz/miscellaneous/blob/main/Hisat--new-summary_sum.py) <br />
 This script creates a table from multiple --new-summary files output by hisat2 <br />
+
+[removing a full sequence in a fasta file using the header](https://github.com/Franck-Dumetz/miscellaneous/blob/main/remove_seq_fasta.py) <br />
+Use the header value without the > sign <br />
