@@ -17,3 +17,8 @@ This script creates a table from multiple --new-summary files output by hisat2 <
 
 [removing a full sequence in a fasta file using the header](https://github.com/Franck-Dumetz/miscellaneous/blob/main/remove_seq_fasta.py) <br />
 Use the header value without the > sign <br />
+usage: <br />
+first put the full path/fasta <br />
+second name.csv <br />
+
+
