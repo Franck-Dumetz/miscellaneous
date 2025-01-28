@@ -22,6 +22,6 @@ first put the full path/fasta <br />
 second name.csv <br />
 
 [mapping_MultiSample_SlurmArray.sh](https://github.com/Franck-Dumetz/miscellaneous/blob/main/mapping_MultiSample_SlurmArray.sh) <br />
-It is slurm array, so all samples will be started at the same time
-Uses Hisat2 to map samples from an generic directory with many smaples and parses the results through Samtools
+It is slurm array, so all samples will be started at the same time. <br />
+Uses Hisat2 to map samples from an generic directory with many smaples and parses the results through Samtools. <br />
 
