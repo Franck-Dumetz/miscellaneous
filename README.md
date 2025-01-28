@@ -16,9 +16,12 @@ usage: python plot_pod5.py [pod5_file] [read_ID] <br />
 This script creates a table from multiple --new-summary files output by hisat2 <br />
 
 [removing a full sequence in a fasta file using the header](https://github.com/Franck-Dumetz/miscellaneous/blob/main/remove_seq_fasta.py) <br />
-Use the header value without the > sign <br />
+Uses the header value without the > sign <br />
 usage: <br />
 first put the full path/fasta <br />
 second name.csv <br />
 
+[mapping_MultiSample_SlurmArray.sh](https://github.com/Franck-Dumetz/miscellaneous/blob/main/mapping_MultiSample_SlurmArray.sh) <br />
+It is slurm array, so all samples will be started at the same time
+Uses Hisat2 to map samples from an generic directory with many smaples and parses the results through Samtools
 
