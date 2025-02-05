@@ -65,11 +65,13 @@ if [ -d "$SUBFOLDER" ]; then
     # Step 2: Remove duplicates using Picard
     echo "Running Picard to remove duplicates..."
     java -jar "$PICARD" MarkDuplicates \
-        I="$ALIGN_OUTPUT_DIR/${BASENAME}_Hssorted.bam" \
-        O="$ALIGN_OUTPUT_DIR/${BASENAME}_Hs_dedup.bam" \
-        M="$ALIGN_OUTPUT_DIR/${BASENAME}_dedup_metrics.txt" \
+        INPUT="$ALIGN_OUTPUT_DIR/${BASENAME}_Hssorted.bam" \
+        OUTPUT="$ALIGN_OUTPUT_DIR/${BASENAME}_Hs_dedup.bam" \
+        METRICS_FILE="$ALIGN_OUTPUT_DIR/${BASENAME}_dedup_metrics.txt" \
         REMOVE_DUPLICATES=true \
-        ASSUME_SORTED=true
+        ASSUME_SORTED=true \
+        VALIDATION_STRINGENCY=SILENT \
+        TMP_DIR=/tmp
 
     samtools index "$ALIGN_OUTPUT_DIR/${BASENAME}_Hs_dedup.bam"
 
