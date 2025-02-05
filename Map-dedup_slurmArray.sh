@@ -60,7 +60,6 @@ if [ -d "$SUBFOLDER" ]; then
     # Convert SAM to BAM and sort
     samtools view -bhF 2308 "$ALIGN_OUTPUT_DIR/${BASENAME}_Hs.sam" > "$ALIGN_OUTPUT_DIR/${BASENAME}_Hs.bam"
     samtools sort "$ALIGN_OUTPUT_DIR/${BASENAME}_Hs.bam" -o "$ALIGN_OUTPUT_DIR/${BASENAME}_Hssorted.bam"
-    samtools index "$ALIGN_OUTPUT_DIR/${BASENAME}_Hssorted.bam"
 
     # Step 2: Remove duplicates using Picard
     echo "Running Picard to remove duplicates..."
