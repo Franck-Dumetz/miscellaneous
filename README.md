@@ -29,6 +29,6 @@ Uses Hisat2 to map samples from an generic directory with many smaples and parse
 Will map using parameters specific for Leishmania, and other Trypanosomatids (intronic junction deactivated) and remove duplicates using Picard. 
 
 [gfa2fasta.py](https://github.com/Franck-Dumetz/miscellaneous/blob/main/gfa2fasta.py) <br />
-Converting a gfa (graph fasta) into a fasta file. 
-Usage:
-    python gfa2fasta.py -i input.gfa -o output.fasta
+Converting a gfa (graph fasta) into a fasta file. <br />
+Usage: <br />
+    python gfa2fasta.py -i input.gfa -o output.fasta <br />
