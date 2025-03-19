@@ -25,8 +25,13 @@ second name.csv <br />
 It is slurm array, so all samples will be started at the same time. <br />
 Uses Hisat2 to map samples from an generic directory with many smaples and parses the results through Samtools. <br />
 
+[MapRmDup_noSlurm.sh](https://github.com/Franck-Dumetz/miscellaneous/blob/main/MapRmDup_noSlurm.sh) <br />
+Same as the previous script but doesn't use slurm, just loops through fastq files from one directory
+
 [Leish_MapRmdup.sh](https://github.com/Franck-Dumetz/miscellaneous/blob/main/Leish_MapRmdup.sh) <br />
 Will map using parameters specific for Leishmania, and other Trypanosomatids (intronic junction deactivated) and remove duplicates using Picard. 
+
+
 
 [gfa2fasta.py](https://github.com/Franck-Dumetz/miscellaneous/blob/main/gfa2fasta.py) <br />
 Converting a gfa (graph fasta) into a fasta file. <br />
