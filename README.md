@@ -2,7 +2,8 @@
 
 Just a few codes that are useful to me and maybe to others
 
-[Summarise Picard output](https://github.com/Franck-Dumetz/miscellaneous/blob/main/Picard_sum.py) <br />
+[Picard_SumTable](https://github.com/Franck-Dumetz/miscellaneous/blob/main/Picard_SumTable.py) <br />
+Will look for all _metrics.txt file within a directory and make a csv file with percentage of duplication and estimated size of the library
 
 [Summarise many bam files](https://github.com/Franck-Dumetz/miscellaneous/blob/main/summarise_bams.sh) <br />
 
