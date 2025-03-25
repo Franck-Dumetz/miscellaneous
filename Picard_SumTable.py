@@ -1,9 +1,11 @@
+#!/usr/bin/env python
+
 import os
 import glob
 
 # Define input directory and output file
 input_dir = input("Enter the directory containing _metrics.txt files: ").strip()
-output_file = "/usr/local/scratch/fdumetz/Vandana/Pf_bam/metrics_summary.txt"
+output_file = input("Enter the name of the output file: ").strip()
 
 # Prepare the output file
 with open(output_file, "w") as out:
