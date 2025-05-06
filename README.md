@@ -38,3 +38,6 @@ Will map using parameters specific for Leishmania, and other Trypanosomatids (in
 Converting a gfa (graph fasta) into a fasta file. <br />
 Usage: <br />
     python gfa2fasta.py -i input.gfa -o output.fasta <br />
+
+[RawCounts2CPM.r](https://github.com/Franck-Dumetz/miscellaneous/blob/main/RawCounts2CPM.r) <br />
+takes featureCounts raw count table and transforms it into CPM and logCPM <br />
