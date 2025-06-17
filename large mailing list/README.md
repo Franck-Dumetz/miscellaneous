@@ -1,1 +1,1 @@
-(Mailing_list.py)[https://github.com/Franck-Dumetz/miscellaneous/blob/main/large%20mailing%20list/Mailing_list.py] sends the same email (html format) to a large list of contacts (cf fromat in contacts.csv)
+[Mailing_list.py](https://github.com/Franck-Dumetz/miscellaneous/blob/main/large%20mailing%20list/Mailing_list.py) sends the same email (html format) to a large list of contacts (cf fromat in contacts.csv)
