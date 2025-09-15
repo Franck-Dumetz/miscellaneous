@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Parent directory containing the folders
-PARENT_DIR="/local/projects-t4/aberdeen2ro/SerreDLab-4/raw_reads/2024-12-10_Eugenia_Lo"
+PARENT_DIR="/PATH/DIRECTORY"
 
 # Mapping the old names to new names
 declare -A NAME_MAP=(
