@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Paths and settings
-HISAT2_INDEX="/usr/local/scratch/fdumetz/Vandana/Pf3d7_v68_index/Pf3d7_v68"  # HISAT2 index
-PARENT_DIR="/usr/local/scratch/fdumetz/Vandana"  # Parent directory containing FASTQ files
+HISAT2_INDEX="PATH/Pf3d7_v68_index/Pf3d7_v68"  # HISAT2 index
+PARENT_DIR="PATH/dir"  # Parent directory containing FASTQ files
 ALIGN_OUTPUT_DIR="$PARENT_DIR/Pf_bam"  # Directory for aligned BAM files
 SUM_DIR="$ALIGN_OUTPUT_DIR/sum_dir"
 THREADS=12  # Number of threads for HISAT2
