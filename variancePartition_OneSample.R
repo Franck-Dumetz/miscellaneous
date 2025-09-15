@@ -9,10 +9,10 @@ library(limma)         # needed for voom
 library(tidyverse)
 
 # read expression data
-expr <- read.delim("/Users/fdumetz/Desktop/Desktop - fdumetzm4-osx/Ld1S_UTR/PTU_stat/transcript_counts_newgff.txt")
+expr <- read.delim("PATH/transcript_counts_newgff.txt")
 
 # read gene features
-features <- read.delim("/Users/fdumetz/Desktop/Desktop - fdumetzm4-osx/Ld1S_UTR/PTU_stat/gene_features.tsv")
+features <- read.delim("PATH/gene_features.tsv")
 
 # merge
 dat <- merge(expr, features, by = "gene_id")
