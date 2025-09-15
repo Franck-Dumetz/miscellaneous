@@ -3,17 +3,17 @@
 ### Slurm array script to run mapping and parsing
 
 #SBATCH --job-name=pvhepato_hs                       # Job name
-#SBATCH --output=/local/scratch/fdumetz/pvhepato/PvhepatoHisat.out   # Standard output log
-#SBATCH --error=/local/scratch/fdumetz/pvhepato/PvhepatoHisat.err    # Standard error log
-#SBATCH --mail-type=BEGIN,END --mail-user=fdumetz@som.umaryland.edu
+#SBATCH --output=PATH/PvhepatoHisat.out   # Standard output log
+#SBATCH --error=PATH/PvhepatoHisat.err    # Standard error log
+#SBATCH --mail-type=BEGIN,END --mail-user=
 #SBATCH --cpus-per-task=12				# Number of CPUs per task
 #SBATCH --mem=60G                                        # Memory per node
 #SBATCH --array=1-4                     # Number of array jobs to run according to list size
 
 # Paths and settings
-HISAT2_INDEX="/local/projects-t3/SerreDLab-3/fdumetz/pvhepato/human_hisat/Human_hisat_ref"  # HISAT2 index
-PARENT_DIR="/local/projects-t3/EDS10/"  # Parent directory containing FASTQ files
-ALIGN_OUTPUT_DIR="/local/scratch/fdumetz/pvhepato/human"  # Directory for aligned BAM files
+HISAT2_INDEX="PATH/Human_hisat_ref"  # HISAT2 index
+PARENT_DIR="PATH/file.fastq"  # Parent directory containing FASTQ files
+ALIGN_OUTPUT_DIR="PATH"  # Directory for aligned BAM files
 SUM_DIR="$ALIGN_OUTPUT_DIR/sum_dir"
 THREADS=32  # Number of threads for HISAT2
 
@@ -25,7 +25,7 @@ mkdir -p "$ALIGN_OUTPUT_DIR"
 mkdir -p "$SUM_DIR"
 
 # Get the subfolder name from the corresponding line in "slurm_dirList4.txt"
-SUBFOLDER=$(sed "${SLURM_ARRAY_TASK_ID}q;d" /local/projects-t3/SerreDLab-3/fdumetz/pvhepato/slurmlist_Pv.txt)
+SUBFOLDER=$(sed "${SLURM_ARRAY_TASK_ID}q;d" PATH/slurmlist_Pv.txt)
 
 # Ensure the subfolder exists
 if [ ! -d "$SUBFOLDER" ]; then
