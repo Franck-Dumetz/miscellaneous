@@ -5,8 +5,8 @@
 from Bio import SeqIO
 
 # Input and output file paths
-input_fasta = "/local/projects-t3/SerreDLab-3/fdumetz/Pv_ethiopia/MultiSpecies/PlasmoDB-68_PknowlesiH_Genome.fasta"
-output_fasta = "/local/projects-t3/SerreDLab-3/fdumetz/Pv_ethiopia/MultiSpecies/PlasmoDB-68_PknowlesiH_Genome-MIT.fasta"
+input_fasta = "PATH/PlasmoDB-68_PknowlesiH_Genome.fasta"
+output_fasta = "PATH/PlasmoDB-68_PknowlesiH_Genome-MIT.fasta"
 header_to_remove = "AY722797.1 Plasmodium knowlesi isolate Malayan MRA-487 mitochondrion, complete genome"  # Replace with the exact header (without the '>')
 
 # Read the input FASTA and filter sequences
