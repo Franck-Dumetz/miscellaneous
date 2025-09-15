@@ -3,9 +3,9 @@
 ### Slurm array script to run mapping and parsing
 
 #SBATCH --job-name=5sp                       # Job name
-#SBATCH --output=/local/projects-t3/SerreDLab-3/fdumetz/Pv_ethiopia/MultiSpecies/5sp_aligned/5spHisat2.out   # Standard output log
-#SBATCH --error=/local/projects-t3/SerreDLab-3/fdumetz/Pv_ethiopia/MultiSpecies/5sp_aligned/5spHisat2.err    # Standard error log
-#SBATCH --mail-type=BEGIN,END --mail-user=fdumetz@som.umaryland.edu
+#SBATCH --output=PATH/5spHisat2.out   # Standard output log
+#SBATCH --error=PATH/5spHisat2.err    # Standard error log
+#SBATCH --mail-type=BEGIN,END --mail-user=
 #SBATCH --cpus-per-task=12				# Number of CPUs per task
 #SBATCH --mem=40G                                        # Memory per node
 #SBATCH --array=1-46                     # Number of array to run according to line 27
@@ -23,7 +23,7 @@ mkdir -p "$ALIGN_OUTPUT_DIR"
 mkdir -p "$SUM_DIR"
 
 # Get the subfolder name from the corresponding line in "slurm_dirList3.txt"
-SUBFOLDER=$(sed "${SLURM_ARRAY_TASK_ID}q;d" /local/projects-t3/SerreDLab-3/fdumetz/Pv_ethiopia/MultiSpecies/slurm_dirList4.txt)
+SUBFOLDER=$(sed "${SLURM_ARRAY_TASK_ID}q;d" PATH/slurm_dirList4.txt)
 
 if [ -d "$SUBFOLDER" ]; then
     echo "Processing folder: $SUBFOLDER"
