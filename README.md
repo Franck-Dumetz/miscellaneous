@@ -41,3 +41,11 @@ Usage: <br />
 
 [RawCounts2CPM.r](https://github.com/Franck-Dumetz/miscellaneous/blob/main/RawCounts2CPM.r) <br />
 takes featureCounts raw count table and transforms it into CPM and logCPM <br />
+
+## submitting ONT basecalled raw signal to SRA
+It can only be done, so far, by converting the POD5 files into FAST5 and basecall using guppy-4.2.2 (later version don't do it). <br />
+```
+pod5 convert to_fast5 /path/to/pod5_dir/*.pod5 --output /path/to/fast5_out/
+```
+Then use the following script to basecall the fast5 files. <br />
+
