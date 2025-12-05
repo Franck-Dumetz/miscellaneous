@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 #SBATCH --job-name=fast5_bc_ama
-#SBATCH --output=/local/projects-t3/SerreDLab-3/fdumetz/Leishmania/ONT_rawsig/%x_%j.out
-#SBATCH --error=/local/projects-t3/SerreDLab-3/fdumetz/Leishmania/ONT_rawsig/%x_%j.err
-#SBATCH --mail-type=BEGIN,END --mail-user=fdumetz@som.umaryland.edu
+#SBATCH --output=/path//ONT_rawsig/%x_%j.out
+#SBATCH --error=/path//ONT_rawsig/%x_%j.err
+#SBATCH --mail-type=BEGIN,END --mail-user=
 #SBATCH --cpus-per-task=16
 #SBATCH --array=0-3
 #SBATCH --mem=100G
 
 set -euo pipefail
 
-BASE_DIR=/local/projects-t3/SerreDLab-3/fdumetz/Leishmania/ONT_rawsig
+BASE_DIR=/path/to/raw/fast5/ONT_rawsig
 
 # If glob matches nothing, expand to empty list rather than literal
 shopt -s nullglob
@@ -48,7 +48,7 @@ echo "Output directory: $output_dir"
 /usr/local/packages/guppy-4.2.2/bin/guppy_basecaller \
   --input_path "$fast5_dir" \
   --save_path "$output_dir" \
-  --config /usr/local/packages/guppy-4.2.2_gpu/data/rna_r9.4.1_70bps_hac.cfg \
+  --config /path/to/models/rna_r9.4.1_70bps_hac.cfg \
   --num_callers "$SLURM_CPUS_PER_TASK" \
   --fast5_out
 
