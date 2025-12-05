@@ -9,7 +9,7 @@
 
 set -euo pipefail
 
-BASE_DIR=/path/to/raw/fast5/ONT_rawsig
+BASE_DIR=/local/projects-t3/SerreDLab-3/fdumetz/Leishmania/ONT_rawsig
 
 # If glob matches nothing, expand to empty list rather than literal
 shopt -s nullglob
@@ -41,18 +41,33 @@ output_dir="$BASE_DIR/${sample_name}_guppy"
 
 mkdir -p "$output_dir"
 
+# Use all CPUs without oversubscribing threads
+CPU_THREADS_PER_CALLER=2
+NUM_CALLERS=$(( SLURM_CPUS_PER_TASK / CPU_THREADS_PER_CALLER ))
+if (( NUM_CALLERS < 1 )); then
+  NUM_CALLERS=1
+fi
+
 echo "[$(date)] Starting guppy for sample: $sample_name"
 echo "Input directory : $fast5_dir"
 echo "Output directory: $output_dir"
+echo "num_callers=${NUM_CALLERS}, cpu_threads_per_caller=${CPU_THREADS_PER_CALLER} (total threads=$((NUM_CALLERS * CPU_THREADS_PER_CALLER)))"
 
-/usr/local/packages/guppy-4.2.2/bin/guppy_basecaller \
+/usr/local/packages/guppy-4.2.2_cpu/bin/guppy_basecaller \
   --input_path "$fast5_dir" \
   --save_path "$output_dir" \
-  --config /path/to/models/rna_r9.4.1_70bps_hac.cfg \
-  --num_callers "$SLURM_CPUS_PER_TASK" \
+  --config /usr/local/packages/guppy-4.2.2_gpu/data/rna_r9.4.1_70bps_hac.cfg \
+  --num_callers "$NUM_CALLERS" \
+  --cpu_threads_per_caller "$CPU_THREADS_PER_CALLER" \
   --fast5_out
 
 cd "$output_dir"
-tar -czvf "${sample_name}_guppy_workspace_fast5.tar.gz" workspace/
+
+# Only tar if workspace exists and is non-empty
+if [ -d workspace ] && [ "$(ls -A workspace | wc -l)" -gt 0 ]; then
+  tar -czvf "${sample_name}_guppy_workspace_fast5.tar.gz" workspace/
+else
+  echo "Warning: workspace/ directory missing or empty for $sample_name" >&2
+fi
 
 echo "[$(date)] Done with sample: $sample_name"
