@@ -47,5 +47,5 @@ It can only be done, so far, by converting the POD5 files into FAST5 and basecal
 ```
 pod5 convert to_fast5 /path/to/pod5_dir/*.pod5 --output /path/to/fast5_out/
 ```
-Then use the following script to basecall the fast5 files. <br />
+Then use the following script to basecall the fast5 files: [ONT2NCBI.sh](https://github.com/Franck-Dumetz/miscellaneous/blob/main/ONT2NCBI.sh). <br />
 
