@@ -9,7 +9,7 @@
 
 set -euo pipefail
 
-BASE_DIR=/local/projects-t3/SerreDLab-3/fdumetz/Leishmania/ONT_rawsig
+BASE_DIR=/path/to/ONT_rawsig
 
 # If glob matches nothing, expand to empty list rather than literal
 shopt -s nullglob
