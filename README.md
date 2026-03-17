@@ -49,4 +49,4 @@ pod5 convert to_fast5 /path/to/pod5_dir/*.pod5 --output /path/to/fast5_out/
 ```
 Then use the following script to basecall the fast5 files: [ONT2NCBI.sh](https://github.com/Franck-Dumetz/miscellaneous/blob/main/ONT2NCBI.sh). <br />
 
-[check_fastq_pairing.sh]() (using slurm) will check whether two gzipped FASTQ files are a valid paired-end pair. It confirms the files exist, tests that both gzip files are intact, counts the number of reads in each file, compares the read IDs in order between R1 and R2, and reports the average read length for each mate. All output is written to the text file you provide when you submit the job. <br />
+[check_fastq_pairing.sh](https://github.com/Franck-Dumetz/miscellaneous/blob/main/check_fastq_pairing.sh) (using slurm) will check whether two gzipped FASTQ files are a valid paired-end pair. It confirms the files exist, tests that both gzip files are intact, counts the number of reads in each file, compares the read IDs in order between R1 and R2, and reports the average read length for each mate. All output is written to the text file you provide when you submit the job. <br />
